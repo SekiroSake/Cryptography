@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:CBC_OECD xmlns="urn:oecd:ties:stf:v4" xmlns:ns2="urn:oecd:ties:cbc:v1">
+    <ns2:MessageSpec>
+        <ns2:SendingEntityIN> </ns2:SendingEntityIN>
+        <ns2:TransmittingCountry>MX</ns2:TransmittingCountry>
+        <ns2:ReceivingCountry>US</ns2:ReceivingCountry>
+        <ns2:MessageType>CBC</ns2:MessageType>
+        <ns2:Language>EN</ns2:Language>
+        <ns2:MessageRefId>1</ns2:MessageRefId>
+        <ns2:MessageTypeIndic>CBC401</ns2:MessageTypeIndic>
+        <ns2:ReportingPeriod>2014-01-01-05:00</ns2:ReportingPeriod>
+        <ns2:Timestamp>2017-04-26T04:34:00.000-04:00</ns2:Timestamp>
+    </ns2:MessageSpec>
+    <ns2:CbcBody>
+        <ns2:ReportingEntity>
+            <ns2:Entity>
+                <ns2:ResCountryCode>US</ns2:ResCountryCode>
+                <ns2:TIN>xyz</ns2:TIN>
+                <ns2:IN>123456789</ns2:IN>
+                <ns2:IN>AbcSub1</ns2:IN>
+                <ns2:Name>ABC Corp</ns2:Name>
+                <ns2:Name>Mexico Sub1</ns2:Name>
+            </ns2:Entity>
+            <ns2:ReportingRole>CBC701</ns2:ReportingRole>
+            <ns2:DocSpec>
+                <DocTypeIndic>OECD1</DocTypeIndic>
+                <DocRefId>4</DocRefId>
+                <CorrMessageRefId> </CorrMessageRefId>
+                <CorrDocRefId> </CorrDocRefId>
+            </ns2:DocSpec>
+        </ns2:ReportingEntity>
+        <ns2:CbcReports>
+            <ns2:DocSpec>
+                <DocTypeIndic>OECD1</DocTypeIndic>
+                <DocRefId>4</DocRefId>
+                <CorrMessageRefId> </CorrMessageRefId>
+                <CorrDocRefId> </CorrDocRefId>
+            </ns2:DocSpec>
+            <ns2:ResCountryCode>US</ns2:ResCountryCode>
+            <ns2:Summary>
+                <ns2:Revenues>
+                    <ns2:Unrelated currCode="USD">300</ns2:Unrelated>
+                    <ns2:Related currCode="USD">400</ns2:Related>
+                    <ns2:Total currCode="USD">700</ns2:Total>
+                </ns2:Revenues>
+                <ns2:ProfitOrLoss currCode="USD">400</ns2:ProfitOrLoss>
+                <ns2:TaxPaid currCode="USD">80</ns2:TaxPaid>
+                <ns2:TaxAccrued currCode="USD">20</ns2:TaxAccrued>
+                <ns2:Capital currCode="USD">250000</ns2:Capital>
+                <ns2:Earnings currCode="USD">20000</ns2:Earnings>
+                <ns2:NbEmployees>300</ns2:NbEmployees>
+                <ns2:Assets currCode="USD">7000000</ns2:Assets>
+            </ns2:Summary>
+            <ns2:ConstEntities>
+                <ns2:ConstEntity>
+                    <ns2:ResCountryCode>US</ns2:ResCountryCode>
+                    <ns2:TIN>xyz</ns2:TIN>
+                    <ns2:IN>123456789</ns2:IN>
+                    <ns2:IN>AbcSub1</ns2:IN>
+                    <ns2:Name>ABC Corp</ns2:Name>
+                    <ns2:Name>Mexico Sub1</ns2:Name>
+                </ns2:ConstEntity>
+                <ns2:IncorpCountryCode>US</ns2:IncorpCountryCode>
+                <ns2:BizActivities>CBC510</ns2:BizActivities>
+                <ns2:BizActivities>CBC513</ns2:BizActivities>
+                <ns2:OtherEntityInfo></ns2:OtherEntityInfo>
+            </ns2:ConstEntities>
+            <ns2:ConstEntities>
+                <ns2:ConstEntity>
+                    <ns2:ResCountryCode>US</ns2:ResCountryCode>
+                    <ns2:TIN>xyz</ns2:TIN>
+                    <ns2:IN>123456789</ns2:IN>
+                    <ns2:IN>AbcSub1</ns2:IN>
+                    <ns2:Name>ABC Corp</ns2:Name>
+                    <ns2:Name>Mexico Sub1</ns2:Name>
+                </ns2:ConstEntity>
+                <ns2:IncorpCountryCode>MX</ns2:IncorpCountryCode>
+                <ns2:BizActivities>CBC503</ns2:BizActivities>
+                <ns2:BizActivities>CBC508</ns2:BizActivities>
+                <ns2:BizActivities>CBC513</ns2:BizActivities>
+                <ns2:OtherEntityInfo></ns2:OtherEntityInfo>
+            </ns2:ConstEntities>
+        </ns2:CbcReports>
+        <ns2:CbcReports>
+            <ns2:DocSpec>
+                <DocTypeIndic>OECD1</DocTypeIndic>
+                <DocRefId>4</DocRefId>
+                <CorrMessageRefId> </CorrMessageRefId>
+                <CorrDocRefId> </CorrDocRefId>
+            </ns2:DocSpec>
+            <ns2:ResCountryCode>US</ns2:ResCountryCode>
+            <ns2:Summary>
+                <ns2:Revenues>
+                    <ns2:Unrelated currCode="USD">1000</ns2:Unrelated>
+                    <ns2:Related currCode="USD">2000</ns2:Related>
+                    <ns2:Total currCode="USD">3000</ns2:Total>
+                </ns2:Revenues>
+                <ns2:ProfitOrLoss currCode="USD">500</ns2:ProfitOrLoss>
+                <ns2:TaxPaid currCode="USD">100</ns2:TaxPaid>
+                <ns2:TaxAccrued currCode="USD">150</ns2:TaxAccrued>
+                <ns2:Capital currCode="USD">1000000</ns2:Capital>
+                <ns2:Earnings currCode="USD">10000</ns2:Earnings>
+                <ns2:NbEmployees>120</ns2:NbEmployees>
+                <ns2:Assets currCode="USD">150000000</ns2:Assets>
+            </ns2:Summary>
+            <ns2:ConstEntities>
+                <ns2:ConstEntity>
+                    <ns2:ResCountryCode>US</ns2:ResCountryCode>
+                    <ns2:TIN>xyz</ns2:TIN>
+                    <ns2:IN>123456789</ns2:IN>
+                    <ns2:IN>AbcSub1</ns2:IN>
+                    <ns2:Name>ABC Corp</ns2:Name>
+                    <ns2:Name>Mexico Sub1</ns2:Name>
+                </ns2:ConstEntity>
+                <ns2:IncorpCountryCode>US</ns2:IncorpCountryCode>
+                <ns2:BizActivities>CBC501</ns2:BizActivities>
+                <ns2:BizActivities>CBC505</ns2:BizActivities>
+                <ns2:BizActivities>CBC513</ns2:BizActivities>
+                <ns2:OtherEntityInfo></ns2:OtherEntityInfo>
+            </ns2:ConstEntities>
+        </ns2:CbcReports>
+        <ns2:AdditionalInfo>
+            <ns2:DocSpec>
+                <DocTypeIndic>OECD1</DocTypeIndic>
+                <DocRefId>4</DocRefId>
+                <CorrMessageRefId> </CorrMessageRefId>
+                <CorrDocRefId> </CorrDocRefId>
+            </ns2:DocSpec>
+            <ns2:OtherInfo>All currency are translated using spot rate 12/31/2015.</ns2:OtherInfo>
+        </ns2:AdditionalInfo>
+        <ns2:AdditionalInfo>
+            <ns2:DocSpec>
+                <DocTypeIndic>OECD1</DocTypeIndic>
+                <DocRefId>4</DocRefId>
+                <CorrMessageRefId> </CorrMessageRefId>
+                <CorrDocRefId> </CorrDocRefId>
+            </ns2:DocSpec>
+            <ns2:OtherInfo>The number is much increased this year due to acquisition of a provate company</ns2:OtherInfo>
+        </ns2:AdditionalInfo>
+        <ns2:AdditionalInfo>
+            <ns2:DocSpec>
+                <DocTypeIndic>OECD1</DocTypeIndic>
+                <DocRefId>4</DocRefId>
+                <CorrMessageRefId> </CorrMessageRefId>
+                <CorrDocRefId> </CorrDocRefId>
+            </ns2:DocSpec>
+            <ns2:OtherInfo>The headquarter office rental cost is high due to the high real estate market at the location.</ns2:OtherInfo>
+        </ns2:AdditionalInfo>
+    </ns2:CbcBody>
+</ns2:CBC_OECD>
