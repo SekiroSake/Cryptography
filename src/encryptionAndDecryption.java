@@ -22,7 +22,7 @@ public class encryptionAndDecryption {
 	private SecretKeySpec secretKey;
 	private Cipher cipher;
 	static byte[] encryptedText = null;
-	
+
 	public encryptionAndDecryption(String secret, int length, String algorithm)
 			throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException {
 		byte[] key = new byte[length];
@@ -30,13 +30,11 @@ public class encryptionAndDecryption {
 		this.secretKey = new SecretKeySpec(key, algorithm);
 		this.cipher = Cipher.getInstance(algorithm);
 	}
-	
-	static String readFile(String path, Charset encoding) 
-			  throws IOException 
-			{
-			  byte[] encoded = Files.readAllBytes(Paths.get(path));
-			  return new String(encoded, encoding);
-			}
+
+	static String readFile(String path, Charset encoding) throws IOException {
+		byte[] encoded = Files.readAllBytes(Paths.get(path));
+		return new String(encoded, encoding);
+	}
 
 	private byte[] fixSecret(String s, int length) throws UnsupportedEncodingException {
 		if (s.length() < length) {
@@ -47,29 +45,34 @@ public class encryptionAndDecryption {
 		}
 		return s.substring(0, length).getBytes("UTF-8");
 	}
-	public byte[] encryptText( String key, String plainText )
-			throws InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {	
+
+	public byte[] encryptText(String key, String plainText)
+			throws InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
 		this.cipher.init(Cipher.ENCRYPT_MODE, this.secretKey);
-		return null;
-		
+		byte[] output = this.cipher.doFinal(plainText.getBytes("UTF-8"));
+		System.out.println(Arrays.toString(output));
+		return output;
+
 	}
 
-	public String decryptText(String key, byte[] encruptedText)
+	public String decryptText(String key, byte[] decryptedText)
 			throws InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
 		this.cipher.init(Cipher.DECRYPT_MODE, this.secretKey);
+//		String decryptedXML = this.cipher.doFinal(decryptedText[0]);
 		return null;
-		
+
 	}
-	
-	public static void main (String[] args) throws IOException, IllegalBlockSizeException, BadPaddingException{
+
+	public static void main(String[] args) throws IOException, IllegalBlockSizeException, BadPaddingException {
 		String xmlString = readFile("src/cryptodir/simpleFile.xml", StandardCharsets.UTF_8);
 		File dir = new File("src/cryptodir");
 		File[] filelist = dir.listFiles();
-		
+
 		encryptionAndDecryption ske;
 		try {
 			ske = new encryptionAndDecryption("!@#$MySecr3tPassw0rd", 16, "AES");
-			//ske = new SymmetricKeyExample("!@#$MySecr3tPassw0rd", 16, "Blowfish");
+			// ske = new SymmetricKeyExample("!@#$MySecr3tPassw0rd", 16,
+			// "Blowfish");
 
 			int choice = -2;
 			while (choice != -1) {
@@ -79,20 +82,19 @@ public class encryptionAndDecryption {
 
 				switch (choice) {
 				case 0:
-						try {
-							ske.encryptText("!@#$MySecr3tPassw0rd", xmlString);
-							
-						} catch (InvalidKeyException | IllegalBlockSizeException | BadPaddingException
-								| IOException e) {
-							System.err.println("Couldn't encrypt : "  + e.getMessage());
-						}
-					
+					try {
+						ske.encryptText("!@#$MySecr3tPassw0rd", xmlString);
+
+					} catch (InvalidKeyException | IllegalBlockSizeException | BadPaddingException | IOException e) {
+						System.err.println("Couldn't encrypt : " + e.getMessage());
+					}
+
 					System.out.println("Files encrypted successfully");
 					break;
-					
-				case 1:				
-					ske.decryptText("!@#$MySecr3tPassw0rd",encryptedText);
-					
+
+				case 1:
+					ske.decryptText("!@#$MySecr3tPassw0rd", encryptedText);
+
 					System.out.println("Files decrypted successfully");
 					break;
 				default:
