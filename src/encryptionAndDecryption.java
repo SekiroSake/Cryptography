@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 public class encryptionAndDecryption {
 	private SecretKeySpec secretKey;
 	private Cipher cipher;
-	byte[] encryptedText = null;
+	static byte[] encryptedText = null;
 	
 	public encryptionAndDecryption(String secret, int length, String algorithm)
 			throws UnsupportedEncodingException, NoSuchAlgorithmException, NoSuchPaddingException {
@@ -61,7 +61,7 @@ public class encryptionAndDecryption {
 		
 	}
 	
-	public static void main (String[] args) throws IOException{
+	public static void main (String[] args) throws IOException, IllegalBlockSizeException, BadPaddingException{
 		String xmlString = readFile("src/cryptodir/simpleFile.xml", StandardCharsets.UTF_8);
 		File dir = new File("src/cryptodir");
 		File[] filelist = dir.listFiles();
@@ -79,7 +79,6 @@ public class encryptionAndDecryption {
 
 				switch (choice) {
 				case 0:
-					
 						try {
 							ske.encryptText("!@#$MySecr3tPassw0rd", xmlString);
 							
@@ -90,14 +89,9 @@ public class encryptionAndDecryption {
 					
 					System.out.println("Files encrypted successfully");
 					break;
-				case 1:
 					
-						try {
-							ske.decryptFile("!@#$MySecr3tPassw0rd",encryptedText);
-						} catch (InvalidKeyException | IllegalBlockSizeException | BadPaddingException
-								| IOException e) {
-							System.err.println("Couldn't decrypt: " + e.getMessage());
-						}
+				case 1:				
+					ske.decryptText("!@#$MySecr3tPassw0rd",encryptedText);
 					
 					System.out.println("Files decrypted successfully");
 					break;
@@ -110,6 +104,10 @@ public class encryptionAndDecryption {
 			System.err.println("Couldn't create key: " + ex.getMessage());
 		} catch (NoSuchAlgorithmException | NoSuchPaddingException e) {
 			System.err.println(e.getMessage());
+		} catch (InvalidKeyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
+
 }
